@@ -1,0 +1,19 @@
+{
+  "name": "e-screenq-cancer-screening-system",
+  "version": "1.0.0",
+  "description": "癌症篩檢問卷系統 (胃幽門螺旋桿菌篩檢問卷、口腔黏膜檢查問卷與個案管理系統)",
+  "scripts": {
+    "dev:backend": "node backend/server.js",
+    "dev:frontend": "npm.cmd --prefix frontend run dev",
+    "build:frontend": "npm.cmd --prefix frontend run build"
+  },
+  "keywords": [
+    "cancer-screening",
+    "oral-cancer",
+    "gastric-cancer",
+    "medical-questionnaire",
+    "signature-pad"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}
