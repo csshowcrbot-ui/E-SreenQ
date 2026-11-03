@@ -2294,6 +2294,18 @@ app.get(['/api/v1/stats', '/api/stats'], (req, res) => {
   }
 });
 
+// Serve frontend production build if available (for cloud deployments like Railway)
+const distPath = path.join(__dirname, '../frontend/dist');
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`[E-ScreenQ Server] Backend API running on http://localhost:${PORT}`);

@@ -1,16 +1,28 @@
 {
   "name": "e-screenq-cancer-screening-system",
   "version": "1.0.0",
-  "description": "癌症篩檢問卷系統 (胃幽門螺旋桿菌篩檢問卷、口腔黏膜檢查問卷與個案管理系統)",
+  "description": "癌症篩檢問卷系統 (胃幽門螺旋桿菌、口腔黏膜、大腸糞便潛血、子宮頸抹片、肺癌LDCT、乳房X光攝影檢查紀錄與個管系統)",
+  "main": "backend/server.js",
+  "type": "module",
   "scripts": {
+    "start": "node backend/server.js",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build",
     "dev:backend": "node backend/server.js",
-    "dev:frontend": "npm.cmd --prefix frontend run dev",
-    "build:frontend": "npm.cmd --prefix frontend run build"
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
   },
   "keywords": [
     "cancer-screening",
     "oral-cancer",
     "gastric-cancer",
+    "fecal-occult-blood",
+    "cervical-smear",
+    "lung-ldct",
+    "mammography",
     "medical-questionnaire",
     "signature-pad"
   ],
